@@ -3,7 +3,7 @@ programa {
     inteiro numero=1, soma = 0, i=0
     real media
     
-    enquanto(numero > 0){
+    enquanto(numero >= 0){
       escreva("informe um numero inteiro: \n")
       leia(numero)
       
