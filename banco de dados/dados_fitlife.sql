@@ -25,7 +25,7 @@ CREATE TABLE metas (
     tipo_meta ENUM('Peso', 'Distacia', 'Calorias'),
     valor_alvo DECIMAL(10 , 2 ),
     data_inicio DATE,
-    status ENUM('Ativa', 'Comcluida'),
+    status ENUM('Ativa', 'Concluida'),
     FOREIGN KEY (id_usuario)
         REFERENCES usuarios (id_usuario)
 );
@@ -81,9 +81,9 @@ WHERE
 SELECT 
     u.nome, u.email, m.status
 FROM
-    metas AS m
+    usuarios AS u
         INNER JOIN
-    usuarios AS u 
+    metas AS m 
         ON m.id_usuario = u.id_usuario
 WHERE
     status = 'Ativa';

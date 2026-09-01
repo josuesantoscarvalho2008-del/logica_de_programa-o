@@ -37,12 +37,14 @@ SELECT
     id_filme, COUNT(id_aluguel) AS total_alugueis
 FROM
     alugueis
-GROUP BY id_filme;
+GROUP BY id_filme order by total_alugueis desc;
 -- 7. Comportamento do Cliente (Média de Notas): Qual é a nota média que cada cliente (pelo ID) costuma dar para os filmes?
 SELECT 
     id_cliente, ROUND(AVG(nota), 2) AS nota_media_clientes
 FROM
     alugueis
+WHERE
+    nota IS NOT NULL
 GROUP BY id_cliente;
 -- 8. Distribuição por Sexo (Atores): Quantos atores são do sexo masculino e quantos são do feminino?
 SELECT 

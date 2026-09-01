@@ -1,20 +1,20 @@
 -- EXERCÍCIO 1: filmes alugados mais de 5 vezes
 
 SELECT 
-    filme_id, COUNT(*) AS total_alugueis
+    id_filme, COUNT(*) AS total_alugueis
 FROM
     alugueis
-GROUP BY filme_id
+GROUP BY id_filme
 HAVING COUNT(*) > 5
 ORDER BY total_alugueis DESC;
 
 -- EXERCÍCIO 2: clientes que fizeram 3 ou mais alugueis
 
 SELECT 
-    cliente_id, COUNT(*) AS total_alugueis
+    id_cliente, COUNT(*) AS total_alugueis
 FROM
     alugueis
-GROUP BY cliente_id
+GROUP BY id_cliente
 HAVING COUNT(*) >= 3
 ORDER BY total_alugueis DESC;
 
@@ -41,10 +41,10 @@ ORDER BY ano_lancamento;
 -- EXERCÍCIO 5: atores que atuaram em mais de 1 filme
 
 SELECT 
-    ator_id, COUNT(*) AS total_filmes
+    id_ator, COUNT(*) AS total_filmes
 FROM
-    filme_atores
-GROUP BY ator_id
+    atuacoes
+GROUP BY id_ator
 HAVING COUNT(*) > 1
 ORDER BY total_filmes DESC;
  
@@ -61,31 +61,31 @@ ORDER BY total_clientes DESC;
 -- EXERCÍCIO 7: filmes com média de nota maior que 8
 
 SELECT 
-    filme_id, AVG(nota) AS nota_media
+    id_filme, AVG(nota) AS nota_media
 FROM
     alugueis
-GROUP BY filme_id
+GROUP BY id_filme
 HAVING AVG(nota) > 8
 ORDER BY nota_media DESC;
  
 -- EXERCÍCIO 8: clientes que alugaram 2+ filmes diferentes
 
 SELECT 
-    cliente_id, COUNT(DISTINCT filme_id) AS filmes_diferentes
+    id_cliente, COUNT(DISTINCT id_filme) AS filmes_diferentes
 FROM
     alugueis
-GROUP BY cliente_id
-HAVING COUNT(DISTINCT filme_id) >= 2
+GROUP BY id_cliente
+HAVING COUNT(DISTINCT id_filme) >= 2
 ORDER BY filmes_diferentes DESC;
  
 -- EXERCÍCIO 9: anos cuja soma de duração ultrapassa 500
 
 SELECT 
-    ano_lancamento, SUM(duracao_minutos) AS duracao_total
+    ano_lancamento, SUM(duracao) AS duracao_total
 FROM
     filmes
 GROUP BY ano_lancamento
-HAVING SUM(duracao_minutos) > 500
+HAVING SUM(duracao) > 500
 ORDER BY duracao_total DESC;
  
 -- EXERCÍCIO 10: nacionalidades com mais de 8 atores

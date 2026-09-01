@@ -82,10 +82,10 @@ WHERE genero = 'Mistério e Suspense';
  
 -- 13. COUNT: Quantas atrizes (sexo feminino) nascidas nos EUA estão cadastradas?
 
-SELECT COUNT(*) AS total_atrizes_eua
+SELECT COUNT(*) AS total_atrizes_EUA
 FROM atores
 WHERE sexo = 'feminino'
-  AND pais_nascimento = 'EUA';
+  AND nacionalidade = 'EUA';
  
 -- 14. AVG: Qual é a média de preço dos filmes que têm duração maior que 150 minutos?
 
