@@ -151,7 +151,7 @@ CREATE TABLE documentos_entregues (
 
 -- Cursos
 
-INSERT INTO curso (nome, carga_horaria) VALUES
+INSERT INTO cursos (nome, carga_horaria) VALUES
 ('Administração', 1800),
 ('Direito', 1600),
 ('Engenharia Civil', 2800),
@@ -361,7 +361,7 @@ INSERT INTO modalidades (modalidade, id_curso) VALUES
 
 -- disciplina
 
-INSERT INTO disciplina (nome, carga_horaria, curso_id_curso) VALUES
+INSERT INTO disciplinas (nome, carga_horaria, id_curso) VALUES
 ('Cálculo I', 120, 73),
 ('Cálculo II', 120, 41),
 ('Álgebra Linear', 80, 27),
@@ -571,7 +571,7 @@ INSERT INTO bibliografias (bibliografia, id_disciplina) VALUES
 
 -- turma
 
-INSERT INTO turma (nome, dias_semana, curso_id_curso) VALUES
+INSERT INTO turmas (nome, dias_semana, id_curso) VALUES
 ('2025.2 - 5º Período - Matutino - Turma H', 'Segunda e Quarta', 61),
 ('2024.2 - 7º Período - Vespertino - Turma B', 'Terça e Quinta', 43),
 ('2025.2 - 8º Período - Vespertino - Turma A', 'Sábado', 12),
@@ -886,7 +886,7 @@ INSERT INTO horarios (horario, id_turma) VALUES
 
 -- professor
 
-INSERT INTO professor (nome, cpf) VALUES
+INSERT INTO professores (nome, cpf) VALUES
 ('Paulo Souza Freitas', '54788728743'),
 ('Carla Ferreira Andrade', '74205493296'),
 ('Isabela Costa Oliveira', '61227530463'),
@@ -990,7 +990,7 @@ INSERT INTO professor (nome, cpf) VALUES
  
 
 -- especialidades
-
+select * from especialidades;
 INSERT INTO especialidades (especialidade, id_professor) VALUES
 ('Especialista', 45),
 ('Licenciado', 22),
@@ -1306,7 +1306,7 @@ INSERT INTO turma_professor (id_turma, id_professor) VALUES
 
 -- aluno
 
-INSERT INTO aluno (nome, cpf, turma_id_turma) VALUES
+INSERT INTO alunos (nome, cpf, id_turma) VALUES
 ('Felipe Silva Nascimento', '89935889163', 62),
 ('Sérgio Rocha Martins', '28900287721', 97),
 ('Carlos Costa Lima', '08386631779', 58),
@@ -1621,7 +1621,7 @@ INSERT INTO emails (email, id_aluno) VALUES
 
 -- matricula
 
-INSERT INTO matricula (data_matricula, aluno_id_aluno, aluno_turma_id_turma) VALUES
+INSERT INTO matriculas (data_matricula, id_aluno, id_turma) VALUES
 ('2024-07-21', 69, 22),
 ('2026-10-13', 24, 77),
 ('2022-05-23', 41, 91),
